@@ -24,7 +24,6 @@ ____________________________________________________________________
 #include <stdbool.h>
 
 int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
 	int row = atoi(argv[1]);
 	int col = atoi(argv[2]);
 	int action = atoi(argv[3]);
@@ -33,7 +32,6 @@ int main(int argc, char *argv[]) {
 	argc-=i;
     int rows[100][100];
     if(action == 1){
-        // Insert row
         row += 1;
         int insert_row[col];
         for(int j = 0; j < col; j++){
@@ -41,7 +39,6 @@ int main(int argc, char *argv[]) {
         }
         i += col;
         
-        // Build 2D array
         for(int r = 0; r < row; r++){
             if(r == location){
                 for(int c = 0; c < col; c++){
@@ -55,8 +52,6 @@ int main(int argc, char *argv[]) {
             }
         }
     }else if(action == 2){
-        // Remove row
-        // Build 2D array
         for(int r = 0; r < row; r++){
             if(r == location){
                 i += col;
@@ -68,7 +63,6 @@ int main(int argc, char *argv[]) {
             }
         }
     }else if(action == 3){
-        // Insert column
         col += 1;
         int insert_col[row];
         for(int j = 0; j < row; j++){
@@ -76,7 +70,7 @@ int main(int argc, char *argv[]) {
         }
         i += row;
         
-        // Build 2D array
+       
         for(int r = 0; r < row; r++){
             for(int c = 0; c < col; c++){
                 if(c == location){
@@ -88,8 +82,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }else if(action == 4){
-        // Remove column
-        // Build 2D array
+       
         bool is_skip = false;
         for(int r = 0; r < row; r++){
             for(int c = 0; c < col; c++){

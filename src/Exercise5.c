@@ -22,12 +22,11 @@ ________________________________________________________________________________
 #include <stdbool.h>
 
 int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
 	int row = atoi(argv[1]);
 	int col = atoi(argv[2]);
     int i = 3;
 	argc-=i;
-    int minArr[row];
+    int arr[row];
 
     for(int r = 0; r < row; r++){
         int min = 999999;
@@ -35,7 +34,7 @@ int main(int argc, char *argv[]) {
             int n = atoi(argv[i]);
             if(n < min){
                 min = n;
-                minArr[r] = min;
+                arr[r] = min;
             }
             i++;
         }
@@ -43,7 +42,7 @@ int main(int argc, char *argv[]) {
 
    int max = -999999;
     for(int m = 0; m < row; m++){
-        int n = minArr[m];
+        int n = arr[m];
         if(n > max){
            max = n;
         }
