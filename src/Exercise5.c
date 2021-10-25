@@ -18,20 +18,30 @@ ________________________________________________________________________________
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <stdbool.h>
+#define SIZE 100
 
-int main(int argc, char *argv[]) {
-	int row = atoi(argv[1]);
-	int col = atoi(argv[2]);
-    int i = 3;
-	argc-=i;
-    int arr[row];
+void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
+{
+	int row, column;
+	int counter = 0;
+	//Convert 1D array to 2D array
+	for (row = 0; row <= (m - 1); row ++){
+		for (column = 0; column <= (n - 1); column ++){
+			a[row][column] = arr[counter];
+			counter++;
+		}
+	}
+}
 
-    for(int r = 0; r < row; r++){
-        int min = 999999;
+void Ex5(int arr[], int m, int n){
+	int a[SIZE][SIZE];
+	Array2Dconverter(arr,a,m,n);
+	//Your codes here
+    int row, col, max, min;
+    int i=3;
+for(int r = 0; r < row; r++){
+        min = 999999;
         for(int c = 0; c < col; c++){
-            int n = atoi(argv[i]);
             if(n < min){
                 min = n;
                 arr[r] = min;
@@ -40,15 +50,28 @@ int main(int argc, char *argv[]) {
         }
     }
 
-   int max = -999999;
-    for(int m = 0; m < row; m++){
+    max = -999999;
+    for(int j = 0; j < row; j++){
         int n = arr[m];
         if(n > max){
            max = n;
         }
-    }
-
+    } 
     printf("%d\n", max);
     printf("\n");
+}
+
+int main(int argc, char *argv[]) {
+	//testing variable, applying it to your algorithm for auto-evaluating
+	int row = atoi(argv[1]);
+	int col = atoi(argv[2]);
+	argc-=3;
+	int testcase[argc],i;
+	for(i=0; i<argc;i++){
+		testcase[i] = atoi(argv[i+3]);
+	}
+
+	Ex5(testcase, row, col);
+	
 	return 0;
 }
