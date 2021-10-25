@@ -18,7 +18,7 @@ ______________________________________
 void Ex1(int n){
 	//Your codes here
 int arr[10][10];
-for (int i = 0; i < n; i++)
+for (int i = 0; i <= n; i++)
 { 
 	for (int j = 0; j <= i; j++)
 	{ if (i == j || j == 0) 
